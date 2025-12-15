@@ -29,16 +29,16 @@ Recognizing that different algorithms require different data treatments, I built
 - **Scaled Pipeline**: For Linear/Ridge/Lasso models (Requires Standardization).
 - **Unscaled Pipeline**: For XGBoost/Random Forest (Preserves original distributions).
 
-## 📊 Model Performance
+## Model Performance
 
 The models were evaluated using **RMSE (Root Mean Squared Error)** on a hold-out test set.
 
 | Model | Preprocessing | Feature Selection | Test RMSE | Verdict |
 | :--- | :--- | :--- | :--- | :--- |
-| **Linear Regression** | Scaled | Lasso | ~9 Trillion | 🚨 Failed (Overfitting) |
-| **Ridge Regression** | Scaled | Lasso | $28,857 | ✅ Stable Baseline |
-| **Random Forest** | Unscaled | Tree-Based | $26,027 | ⚠️ Good Accuracy |
-| **XGBoost (Tuned)** | Unscaled | Tree-Based | **~$24,500** | 🏆 **Best Performer** |
+| **Linear Regression** | Scaled | Lasso | ~9 Trillion | Failed (Overfitting) |
+| **Ridge Regression** | Scaled | Lasso | $28,857 | Stable Baseline |
+| **Random Forest** | Unscaled | Tree-Based | $26,027 | Good Accuracy |
+| **XGBoost (Tuned)** | Unscaled | Tree-Based | **~$24,500** | **Best Performer** |
 
 *Note: The initial XGBoost model suffered from high variance (Overfitting gap of ~$22k). Extensive Hyperparameter tuning (Regularization & Subsampling) was performed to close this gap.*
 
